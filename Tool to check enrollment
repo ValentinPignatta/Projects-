@@ -1,0 +1,79 @@
+'''
+
+  * Class: 44-141 Computer Programming I
+
+  * Author: Valentin Pignatta
+
+  * Description: Program that opens file with student's info to see if students are registered for classes
+
+  * Due: 4/6/2023
+
+  * I pledge that I have completed the programming assignment independently.
+
+  * I have not copied the code from a student or any source.
+
+  * I have not given my code to any other student and will not share this code with anyone under any circumstances.
+
+'''
+#Defining functions 
+def fileReader (lastName, fileInput):
+    for line in externalFile:
+        count = 1
+        studentData = line.strip().split()
+        if (lastName == studentData [1]):
+            count = 0
+            break
+    if (count == 0):
+        return studentData
+    else:
+        return("Student not found")
+def firstName (studentInfo):
+    return studentInfo
+def lastName (studentInfo):
+    return studentInfo
+def gpa (studentInfo):
+    return studentInfo 
+def creditHours (studentInfo):
+    return studentInfo
+def mealPlan(studentInfo):
+    return studentInfo
+def advisor(studentInfo):
+    return studentInfo
+def enrollmentSubmit (studentInfo):
+    if (studentInfo == "True"):
+        return "has enrolled"
+    else:
+        return "has not enrolled"
+ #Main Program
+ #Reading file 
+externalFile = open ("studentInfo.txt", "r")
+
+
+("Welcome to the Enrollment Center!")
+#Asking for user inout 
+inputFromUser = input ("Please enter a last name or enter 0 to stop program: ")
+
+capitalizedInfo = inputFromUser.capitalize()
+
+#While loop (Sentinel)
+while(inputFromUser != "0" ):
+    info = fileReader(capitalizedInfo, externalFile)
+    
+    if (info  !=  "Student not found"):
+        
+        studenFirstName = firstName (info[0])
+        studentLastName = lastName (info[1])
+        studentGpa = gpa (info [2])
+        numberOfhours = creditHours (info[3])
+        mealInfo = mealPlan (info[4])
+        studentAdvisor = advisor (info[5])
+        enrollment = enrollmentSubmit (info[6])
+        
+        print(studenFirstName,studentLastName,"has a ", studentGpa, "\n", "Credit Hours:", numberOfhours,
+              "\n", studentLastName + "'s advisor is: ", studentAdvisor,"\n", studentLastName, enrollment)
+    inputFromUser = input ("Please enter a last name or enter 0 to stop program: ")
+
+    capitalizedInfo = inputFromUser.capitalize()  
+
+#Closing file 
+externalFile.close ()
