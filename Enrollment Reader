@@ -1,20 +1,4 @@
-'''
 
-  * Class: 44-141 Computer Programming I
-
-  * Author: Valentin Pignatta
-
-  * Description: Program that opens file with student's info to see if students are registered for classes
-
-  * Due: 4/6/2023
-
-  * I pledge that I have completed the programming assignment independently.
-
-  * I have not copied the code from a student or any source.
-
-  * I have not given my code to any other student and will not share this code with anyone under any circumstances.
-
-'''
 #Defining functions 
 def fileReader (lastName, fileInput):
     for line in externalFile:
@@ -77,3 +61,18 @@ while(inputFromUser != "0" ):
 
 #Closing file 
 externalFile.close ()
+
+
+
+
+userInput = str (input ("Welcome to the Enrollment Center! \n Please enter a last name or enter 0 to stop program:"))
+
+fileInput = open ("studentInfo.txt" ,"r")
+
+
+
+
+def fileReader (lasName, fileInput):
+    for lastName in fileInput:
+        return (lastName)
+    
